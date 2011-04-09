@@ -1,6 +1,6 @@
 # Robot Framework Remote Keyword Evaluator
 
-This is an interactive GUI app for running your remote keywords, without having to put them inside a complete Robot Framework test and run it with pybot/jybot/standalone jar.
+This is an interactive GUI app for running your Robot Framework **remote keywords**, without having to put them inside a complete Robot Framework test and run it with pybot/jybot/standalone jar.
 
 ## Usage
 
