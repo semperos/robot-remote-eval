@@ -31,7 +31,6 @@
       (str/replace #"_" " ")
       capitalize-all))
 
-;; 1. Split by | not preceded by \
 (defn parse-rf
   "Create a map of function to args pairs based on the code lines passed in"
   [lines]

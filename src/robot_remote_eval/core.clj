@@ -1,5 +1,4 @@
 ;; This is a GUI "REPL" for RobotFramework keywords
-;; defined in the robot-framework-clowd project
 
 (ns robot-remote-eval.core
   (:use [robot-remote-eval history parser util]
@@ -14,9 +13,6 @@
            net.miginfocom.swing.MigLayout)
   (:gen-class
    :main true))
-
-;; Text area where code can be written. Button to evaluate code. Button to clear text area.
-;; Save session history of commands (text area) so they can go back and reuse.
 
 ;; ## Component Definitions
 (def lbl-code-area (JLabel. "Keywords"))
@@ -54,6 +50,7 @@
 (def btn-clipboard-results (JButton. "Copy to Clipboard"))
 (def btn-history (JButton. "Session History"))
 (def btn-refresh-history (JButton. "Refresh"))
+
 ;; ## Actions
 
 ;; Clear contents of code textarea
