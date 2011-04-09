@@ -4,7 +4,9 @@ This is an interactive GUI app for running your Robot Framework **remote keyword
 
 ## Usage
 
-If you've downloaded the EXE file, double-click it. If you've downloaded the standalone jar file, run `java -jar robot-remote-eval-x.x.x.jar` at your command prompt.
+**Before this tool is useful, you need to have your remote library's remote server running, so that it can find and run your remote keywords. Currently this tool only leverages remote libraries running on `localhost` port 8270.**
+
+If you've downloaded the EXE file for this tool, double-click it. If you've downloaded the standalone jar file, run `java -jar robot-remote-eval-x.x.x.jar` at your command prompt.
 
 In the left text area, you type your commands (Robot Framework remote keywords plus args). One command per line, the first word(s) should be your Robot Framework keyword, followed by the args for that keyword separated by pipes `|` (just like you do in RIDE for the setup/teardown of a test).
 
