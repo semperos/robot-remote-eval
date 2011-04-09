@@ -80,13 +80,13 @@
 (with-action btn-run evt
   (when-not (empty? (.getText textarea-code))
     (let [raw-code (.getText textarea-code)
-          lines (str/split-lines raw-code)
+          lines (remove empty? (str/split-lines raw-code))
           code-exprs (parse-rf lines)
           output (with-out-str (doseq [[the-fn the-args] code-exprs]
                                  (let [raw-output (str (call "http://localhost:8270/RPC2" :run_keyword the-fn the-args))
                                        trimmed-output (str/trim raw-output)]
                                    (println (str (fn-name-to-rf the-fn) "=> " trimmed-output"\n")))))]
-      (save-to-history raw-code)
+      (doseq [line lines] (save-to-history line))
       (.append textarea-results (str output "********************************************************************************\n")))))
 
 ;; Show history
@@ -120,7 +120,7 @@
                 (.add btn-clipboard-results)
                 (.add btn-clear-results)))
 
-(def frame (doto (JFrame. "Robot Framework - Keyword Evaluator")
+(def frame (doto (JFrame. "Robot Framework - Remote Keyword Evaluator")
              (.setSize 960 500)
              (.setDefaultCloseOperation JFrame/EXIT_ON_CLOSE)
              (.setContentPane pnl-main)))
